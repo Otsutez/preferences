@@ -16,7 +16,14 @@ Configuration files for the following software:
 
 ## Helix Setup
 
-Clone the repository:
+Install Debian / Kali way, grab latest .deb package and install:
+
+```bash
+wget https://github.com/helix-editor/helix/releases/download/25.07.1/helix_25.7.1-1_amd64.deb
+sudo apt install ./helix_25.7.1-1_amd64.deb
+```
+
+Clone this repository:
 
 ```bash
 git clone https://github.com/Otsutez/preferences.git

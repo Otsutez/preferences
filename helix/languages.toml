@@ -1,0 +1,99 @@
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "python"
+language-servers = ["basedpyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"] }
+auto-format = true
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "markdown"
+soft-wrap.wrap-at-text-width = true
+soft-wrap.wrap-indicator = ""
+formatter = { command = "npx", args = ["prettier", "--parser", "markdown"]}
+auto-format = true
+
+
+# ***************************** LATEX *****************************************
+[[language]]
+name = "latex"
+injection-regex = "tex"
+language-servers = [{name = "texlab"}]
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab.build]
+onSave = true
+forwardSearchAfter = true
+args = ["-pdf", "-pvc", "%f"]
+
+# *************************** FRONTEND *****************************************
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
+config = { html = { options = { "output.selfClosingStyle" = "xhtml" }}}
+
+[language-server.typescript-language-server.config]
+preferences = { includePackageJsonAutoImports = "off" }
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "emmet-ls"]
+formatter = { command = 'npx', args = ["prettier", "--parser", "html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["emmet-ls"]
+file-types = ["css", "tcss"]
+formatter = { command = 'npx', args = ["prettier", "--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true

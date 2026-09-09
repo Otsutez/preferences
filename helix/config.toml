@@ -1,0 +1,54 @@
+theme = "my_github_dark"
+
+[editor]
+bufferline = "always"
+true-color = true
+cursorline = true
+color-modes = true
+scrolloff = 8
+mouse = true
+idle-timeout = 75
+rulers = [80]
+end-of-line-diagnostics = "disable"
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+# [editor.file-picker]
+# git-ignore = false
+
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "hint"
+# Minimum severity to show a diagnostic on other lines:
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.smart-tab]
+enable = false
+
+[keys.normal]
+X = ["extend_line_up", "extend_to_line_bounds"]
+C-s = ":w"
+C-n = "@*%s<ret>"
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
+
+[keys.select]
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.normal.space]
+z = ":toggle gutters.line-numbers.min-width 51 3"
+
